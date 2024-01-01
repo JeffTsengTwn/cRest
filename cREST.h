@@ -21,9 +21,10 @@ typedef struct _Controller {
     Method doPut;
     Method doDelete;
     Method doUnsupport;
+    Response response;
 } Controller;
 
-void cREST_dispatch(int, char *[], char *[], Controller *[]);
+Controller *cREST_dispatch(int, char *[], char *[], Controller *[]);
 void cREST_init_controller(Controller *, char *, Method, Method, Method, Method);
 
 
